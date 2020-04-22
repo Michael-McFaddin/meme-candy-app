@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Container from 'react-bootstrap/Container'
 
 class MemeGenerator extends Component {
   constructor() {
@@ -38,31 +39,31 @@ class MemeGenerator extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Container">
         <form className="meme-form" onSubmit={this.handleSubmit}>
-          <input 
+          <input style={{margin: 40}}
             type="text"
             name="topText"
             placeholder="Top Text"
             value={this.state.topText}
             onChange={this.handleChange}
           />
-          <input 
+          <input  style={{margin: 40}}
             type="text"
             name="bottomText"
             placeholder="Bottom Text"
             value={this.state.bottomText}
             onChange={this.handleChange}
           />
-        
-          <button>Generate</button>
+            <button  style={{marginRight: 520}}>Generate</button>
         </form>
-
-        <div className="meme">
-          <img src={this.state.randomImgUrl} alt="" />
-          <h2 className="top">{this.state.topText}</h2>
-          <h2 className="bottom">{this.state.bottomText}</h2>
-        </div>
+        <Container style={{margin: 40, textAlign: "center"}}>
+          <div className="meme">
+            <img style={{height: 700 , width: "auto" }} src={this.state.randomImgUrl} alt="" />
+            <h2 className="top">{this.state.topText}</h2>
+            <h2 className="bottom">{this.state.bottomText}</h2>
+          </div>
+        </Container>
       </div>
       )
   }
