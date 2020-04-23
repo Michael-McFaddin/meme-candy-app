@@ -1,6 +1,9 @@
 import React from 'react';
 import Login from "./components/Login.js";
 import SignUp from "./components/Signup.js";
+import Index from "./components/Index.js";
+import Test from "./Test.js"
+
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function Navbar() {
@@ -18,6 +21,12 @@ function Navbar() {
                 <li className="nav-item">
                   <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to={"/index"}>Index</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to={"/test"}>Test</Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -29,6 +38,8 @@ function Navbar() {
               <Route exact path='/' component={Login} />
               <Route path="/sign-in" component={Login} />
               <Route path="/sign-up" component={SignUp} />
+              <Route path="/index" component={Index} />
+              <Route path="/test" component={Test} />
             </Switch>
           </div>
         </div>
