@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 import Footer from './Footer';
+import axios from 'axios';
 
 
 export default class Login extends Component {
+  
+  Login(formData) {
+      console.log('form data was received', formData);
+    }
+
+
+   
     render() {
         return (
           <div>
@@ -19,7 +27,7 @@ export default class Login extends Component {
                       <input type="password" className="form-control" placeholder="Enter password" />
                   </div>
 
-                  <button type="submit" className="btn btn-primary btn-block">Submit</button>
+                  <button type="submit" className="btn btn-primary btn-block" onSubmit={this.Login.bind(this)}>Submit</button>
               
               </form>
             <Footer />
