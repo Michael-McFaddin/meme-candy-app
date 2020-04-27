@@ -14,6 +14,8 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Logout from './components/Logout';
 
+import IdeasContainer from './IdeasContainer'
+
  
 export default class App extends Component {
   render() {
@@ -30,6 +32,7 @@ export default class App extends Component {
               <Route path="/contact" component={Contact}/>
               <Route component={Error}/>
            </Switch>
+           <IdeasContainer />
         </div> 
       </BrowserRouter>
     );
