@@ -14,7 +14,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Logout from './components/Logout';
 
-import IdeasContainer from './IdeasContainer'
+// import IdeasContainer from './IdeasContainer'
 
  
 export default class App extends Component {
@@ -32,7 +32,7 @@ export default class App extends Component {
               <Route path="/contact" component={Contact}/>
               <Route component={Error}/>
            </Switch>
-           <IdeasContainer />
+           {/*/ <IdeasContainer /> /*/}
         </div> 
       </BrowserRouter>
     );

@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from 'react';
+import axios from 'axios';
 
 class IdeasContainer extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class IdeasContainer extends Component {
   }
 }
 
-export default IdeasContainer
+export default IdeasContainer;
 
 
 

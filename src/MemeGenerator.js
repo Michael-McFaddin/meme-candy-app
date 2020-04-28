@@ -39,7 +39,7 @@ class MemeGenerator extends Component {
 
   render() {
     return (
-      <div className="Container">
+      <div className="container">
         <form className="meme-form" onSubmit={this.handleSubmit}>
           <input style={{margin: 40}}
             type="text"
@@ -55,7 +55,7 @@ class MemeGenerator extends Component {
             value={this.state.bottomText}
             onChange={this.handleChange}
           />
-            <button  style={{marginRight: 520}}>Generate</button>
+            <button>Generate</button>
         </form>
         <Container style={{margin: 40, textAlign: "center"}}>
           <div className="meme">

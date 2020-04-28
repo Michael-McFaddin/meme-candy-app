@@ -18,6 +18,15 @@ function Header() {
                     fontStretch: "expanded",
                     fontSize: 150
                   }}className="display-1">Meme Candy</h1>
+                  <h3 style={{
+                    marginLeft: 80, 
+                    marginTop: 200, 
+                    color: "black", 
+                    fontWeight: "bold",
+                    fontFamily: "Pacifico",
+                    fontStretch: "expanded",
+                    fontSize: 50
+                  }}>A stranger's just a friend you haven't met!</h3>
                 </div>
               </Container>
             </Jumbotron>
