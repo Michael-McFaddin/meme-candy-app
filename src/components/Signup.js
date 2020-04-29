@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Footer from './Footer';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
 
 export default class Signup extends Component {
   constructor(props) {
@@ -47,43 +49,67 @@ export default class Signup extends Component {
   }
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="name"
-            name="name"
-            placeholder="Name"
-            value={this.state.name}
-            onChange={this.handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={this.state.email}
-            onChange={this.handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={this.handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="password_confirmation"
-            placeholder="Password confirmation"
-            value={this.state.password_confirmation}
-            onChange={this.handleChange}
-            required
-          />
-          <button type="submit">Sign Up</button>
-        </form>
-      </div>
+    <div>
+      <MDBContainer>
+        <MDBRow>
+          <MDBCol md="6">
+            <form onSubmit={this.handleSubmit}>
+              <p className="h5 text-center mb-4">Sign up</p>
+              <div className="grey-text">
+                <MDBInput 
+                  label="Your name" 
+                  icon="user" 
+                  name="name"  
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                  required
+                  group type="name" 
+                  validate error="wrong"
+                  success="right" 
+                />
+                <MDBInput 
+                  label="Your email" 
+                  icon="envelope" 
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                  required
+                  group type="email" 
+                  validate error="wrong"
+                  success="right" 
+                />
+                <MDBInput 
+                  label="Your password" 
+                  icon="lock"
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                  required 
+                  group type="password" 
+                  validate error="wrong"
+                  success="right" 
+                />
+                <MDBInput 
+                  label="Confirm your password" 
+                  icon="exclamation-triangle"
+                  name="password_confirmation"
+                  value={this.state.password_confirmation}
+                  onChange={this.handleChange}
+                  required 
+                  group type="password" 
+                  validate error="wrong" 
+                  success="right" 
+                />
+              </div>
+              <div className="text-center">
+                <MDBBtn type="submit" >Sing Up</MDBBtn>
+              </div>
+            </form>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
+      <Footer />
+    </div>
     );
   }
 }
