@@ -14,19 +14,18 @@ function Header() {
                     marginTop: 200, 
                     color: "black", 
                     fontWeight: "bold",
-                    fontFamily: "Pacifico",
+                    fontFamily: "arial",
                     fontStretch: "expanded",
                     fontSize: 150
                   }}className="display-1">Meme Candy</h1>
-                  <h3 style={{
-                    marginLeft: 80, 
-                    marginTop: 200, 
+                  <h2 style={{
+                    margin: "auto", 
                     color: "black", 
                     fontWeight: "bold",
                     fontFamily: "Pacifico",
                     fontStretch: "expanded",
                     fontSize: 50
-                  }}>A stranger's just a friend you haven't met!</h3>
+                  }}>A stranger's just a friend you haven't met!</h2>
                 </div>
               </Container>
             </Jumbotron>
