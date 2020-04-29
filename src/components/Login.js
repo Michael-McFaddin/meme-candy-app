@@ -1,45 +1,7 @@
-// import React, { Component } from "react";
-// import Footer from './Footer';
-// import axios from 'axios';
-
-
-// export default class Login extends Component {
-  
-//   Login(formData) {
-//       console.log('form data was received', formData);
-//     }
-
-
-   
-//     render() {
-//         return (
-//           <div>
-//               <form>
-//                   <h3>Log In</h3>
-
-//                   <div className="form-group">
-//                       <label>Email address</label>
-//                       <input type="email" className="form-control" placeholder="Enter email" />
-//                   </div>
-
-//                   <div className="form-group">
-//                       <label>Password</label>
-//                       <input type="password" className="form-control" placeholder="Enter password" />
-//                   </div>
-
-//                   <button type="submit" className="btn btn-primary btn-block" onSubmit={this.Login.bind(this)}>Submit</button>
-              
-//               </form>
-//             <Footer />
-//           </div>
-//         );
-//     }
-// }
-
-
-
 import React, {useState} from 'react';
 import axios from 'axios';
+import Footer from './Footer';
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 
 function LoginForm(props){
     const [username, setUsername] = useState("")
@@ -88,23 +50,29 @@ function LoginForm(props){
         width: "80%"
     }
     return(
-        <div>
-            <div style={formDivStyle}>
-            <h1>Log In</h1>
-            <form class="ui form" onSubmit={handleSubmit}>
-                <div class="field">
-                    <label>Username</label>
-                    <input value={username} onChange={handleUsernameChange} type="text" placeholder="username"/>
+      <div>
+        <MDBContainer>
+          <MDBRow>
+            <MDBCol md="6">
+              <form onSubmit={handleSubmit}>
+                <p className="h5 text-center mb-4">Log In</p>
+                <div className="grey-text">
+                  <MDBInput label="Type your email" value={username} onChange={handleUsernameChange} icon="envelope" group type="email" validate error="wrong"
+                    success="right" />
+                  <MDBInput label="Type your password" value={password} onChange={handlePasswordChange} icon="lock" group type="password" validate />
                 </div>
-                <div class="field">
-                    <label>Password</label>
-                    <input value={password} onChange={handlePasswordChange} type="password" placeholder="password"/>
+                <div className="text-center">
+                  <MDBBtn type="submit">Login</MDBBtn>
                 </div>
-                
-                <button class="ui button" type="submit">Submit</button>
-            </form>
-        </div>
-        </div>
+              </form>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
+        <Footer />
+      </div>
+
+
+      
     )
 } 
 
