@@ -1,9 +1,16 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Header from './Header';
- 
 import { NavLink } from 'react-router-dom';
  
- const Navigation = () => {
+ class Navigation extends Component {
+   state = {
+  };
+
+  logout = () => {
+    localStorage.clear("token");
+    
+  };
+  render() {
     return (
 
       <div className="App" > 
@@ -14,7 +21,7 @@ import { NavLink } from 'react-router-dom';
                 <NavLink style={{color: "white"}} className="navbar-brand" to="/my-page">MyPage</NavLink>
                 <NavLink style={{color: "white"}} className="navbar-brand" to="/log-in">Login</NavLink>
                 <NavLink style={{color: "white"}} className="navbar-brand" to="/sign-up">Signup</NavLink>
-                <NavLink style={{color: "white"}} className="navbar-brand" to="/log-out">Logout</NavLink>
+                <NavLink style={{color: "white"}} onClick={this.logout} className="navbar-brand" to="/log-out">Logout</NavLink>
                 <NavLink style={{color: "white"}} className="navbar-brand" to="/contact">Contact</NavLink>
              </div>
           </div>
@@ -22,6 +29,7 @@ import { NavLink } from 'react-router-dom';
           <Header />
       </div>
     );
+  }
 }
  
 export default Navigation;
