@@ -41,7 +41,7 @@ export default class Signup extends Component {
           this.props.handleSuccessfulAuth(response.data );
         }
       })
-      .then(this.props.history.push("/my-page"))
+      .then(this.props.history.push("/log-in"))
       .catch(error => {
         console.log("signup error", error);
         alert(JSON.stringify(error.response.data.errors));

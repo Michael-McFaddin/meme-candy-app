@@ -11,7 +11,11 @@ class MyPage extends Component {
     }
   }
   componentDidMount() {
-    axios.get('http://localhost:3001/api/v1/memes')
+    const token = localStorage.getItem("token")
+    axios.get('http://localhost:3001/api/v1/memes', {
+      headers: {"Authorization": `Bearer ${token}` }
+    })
+
     .then(response => {
       console.log(response)
       this.setState({memes: response.data})
