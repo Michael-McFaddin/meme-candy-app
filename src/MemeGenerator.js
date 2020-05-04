@@ -1,5 +1,6 @@
-import React, {Component} from 'react'
-import Container from 'react-bootstrap/Container'
+import React, {Component} from 'react';
+import Container from 'react-bootstrap/Container';
+import axios from 'axios';
 
 class MemeGenerator extends Component {
   constructor() {
@@ -37,6 +38,35 @@ class MemeGenerator extends Component {
     this.setState({ randomImgUrl: randMemeImg})
   }
 
+  saveMeme(event) {
+    const { memeName, topText, bottomText, randomImgUrl, userId } = this.state;
+    axios
+      .post(
+        'http://localhost:3001/api/v1/users',
+        {
+          meme: {
+            meme_name: memeName,
+            top_text: topText,
+            bottom_text: bottomText,
+            img_url: randomImgUrl,
+            user_id: userId
+          }
+        }
+        // { withCredentials: true }
+      )
+      .then(response => {
+        if (response.data.status === "created") {
+          this.props.handleSuccessfulAuth(response.data);
+        }
+      })
+      .then(this.props.history.push("/log-in"))
+      .catch(error => {
+        console.log("signup error", error);
+        alert(JSON.stringify(error.response.data.errors));
+      });
+    event.preventDefault();
+  }
+
   render() {
     return (
       <div className="container">
@@ -57,6 +87,9 @@ class MemeGenerator extends Component {
           />
             <button>Generate</button>
         </form>
+
+        <button>Save Meme</button>
+
         <Container style={{margin: 40, textAlign: "center"}}>
           <div className="meme">
             <img style={{height: 700 , width: "auto" }} src={this.state.randomImgUrl} alt="" />
